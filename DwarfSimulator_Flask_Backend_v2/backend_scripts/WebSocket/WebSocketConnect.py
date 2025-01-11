@@ -8,7 +8,6 @@ from backend_scripts.Markets.Base.GetStockExchangeData import get_promotion
 from backend_scripts.Markets.Base.GetGameData import get_game_data
 from backend_scripts.Game_Settings.connection_BD import connection_parameters
 
-# Инициализация подключения к Redis
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
 total_сonnections = 0
@@ -44,15 +43,6 @@ def webSocket_connect(cursor, target_id):
         "variables_for_gameplay" : variables_for_gameplay,
         "purchased_goods" : purchased_goods
     }
-
-    # print(f"socket_name : {socket_name}")
-    # print(f"forge_ui_data : {forge_ui_data}")
-    # print(f"promotion_ui_data : {promotion_ui_data}")
-    # print(f"game_data : {game_data}")
-
-    # game_data["diamond"] = update_number_for_ui(game_data["diamond"])
-    # game_data["gold"] = update_number_for_ui(game_data["gold"])
-    # game_data["eri"] = update_number_for_ui(game_data["eri"])
 
     ui_data = {
         "socket_name": socket_name,

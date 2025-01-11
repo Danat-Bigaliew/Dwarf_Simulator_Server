@@ -2,7 +2,6 @@ from flask import Flask
 from backend_scripts.Sign_In_Log_In.registration import registration_user
 from backend_scripts.Sign_In_Log_In.authorization import authorization_user
 
-# Инициализация Flask приложения
 app = Flask(__name__)
 
 @app.route('/registrationUser', methods=['POST'])

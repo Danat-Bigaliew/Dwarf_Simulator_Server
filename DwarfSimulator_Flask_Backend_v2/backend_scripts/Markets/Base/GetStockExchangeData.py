@@ -4,7 +4,6 @@ from backend_scripts.Game_Settings.connection_BD import connection_parameters
 
 def get_promotion(cursor, target_id):
     try:
-        # Формирование переменной 'promotion'
         cursor.execute(
             """
             SELECT 
@@ -54,8 +53,6 @@ def get_promotion(cursor, target_id):
             for record in promotion_records
         }
 
-        # Формирование переменной 'ui_stockExchange_data'
-        # Начинать отсюда
         cursor.execute(
             """
             SELECT 

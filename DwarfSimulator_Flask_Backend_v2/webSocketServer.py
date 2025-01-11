@@ -13,7 +13,7 @@ from mainTimer import start_timer
 app = FastAPI()
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
-active_connections = [] # Список для хранения всех подключений
+active_connections = []
 
 async def timer_message_callback(message):
     if not isinstance(message, str):
@@ -28,7 +28,7 @@ async def timer_message_callback(message):
     else:
         print(f"Таймер сообщает: {message}")
 
-def run_timer(): # Запуск таймера в отдельном потоке
+def run_timer():
     asyncio.run(start_timer(timer_message_callback))
 
 timer_thread = threading.Thread(target=run_timer, daemon=True)

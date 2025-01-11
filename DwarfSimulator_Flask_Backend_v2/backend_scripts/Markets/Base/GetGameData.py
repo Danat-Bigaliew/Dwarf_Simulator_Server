@@ -1,6 +1,6 @@
 def get_game_data(cursor, target_id):
     try:
-        cursor.execute(# переделать
+        cursor.execute(
             """
             SELECT 
                 player_id, diamond, gold, eri, happiness, strength, eloquence
@@ -27,10 +27,7 @@ def get_game_data(cursor, target_id):
             'strength': result[5],
             'eloquence': result[6]
         }
-
-        print(f"У игрока {game_data["gold"]} голды")
-
-        # Возврат данных
+        
         return game_data
 
     except Exception as e:

@@ -31,5 +31,4 @@ async def start_timer(test_callback):
 
 if __name__ == "__main__":
     print("Таймер запущен. Программа работает в фоне.")
-    # Основной поток запускает таймер в фоновом потоке
     start_timer(print)
